@@ -1,5 +1,16 @@
 "use server"
 
+/**
+ * Stripe Payment Server Actions
+ * 
+ * Handles payment processing including:
+ * - Creating checkout sessions
+ * - Managing customer portal access
+ * - Retrieving subscription information
+ * 
+ * Note: Webhook handling is done in app/api/webhooks/stripe/route.ts
+ */
+
 import { redirect } from "next/navigation"
 import { getUser } from "@/actions/auth"
 import { stripe } from "@/lib/stripe/server"

@@ -1,5 +1,15 @@
 "use server"
 
+/**
+ * Authentication Server Actions
+ * 
+ * Handles user authentication including:
+ * - Email magic link sign-in
+ * - Email/password sign-up
+ * - Google OAuth
+ * - User session management
+ */
+
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 import { z } from "zod"

@@ -274,13 +274,49 @@ Make sure to set all environment variables in your hosting platform.
 
 1. **Customize the Landing Page**: Update `app/page.tsx` with your content
 2. **Configure Plans**: Update `lib/config.ts` with your pricing
-3. **Add Features**: Build out your SaaS features in `app/(dashboard)/`
+3. **Add Features**: Build out your SaaS features in `app/dashboard/`
 4. **Set up Email Templates**: Create email templates in Resend
 5. **Configure SEO**: Update metadata in `app/layout.tsx`
+
+## 📚 Documentation
+
+Comprehensive documentation is available in the `docs/` directory:
+
+- **[API Documentation](./docs/API.md)**: Server actions, utilities, and API reference
+- **[Architecture Guide](./docs/ARCHITECTURE.md)**: System design and architecture decisions
+- **[Troubleshooting](./docs/TROUBLESHOOTING.md)**: Common issues and solutions
+- **[Code Examples](./docs/EXAMPLES.md)**: Practical code examples
+- **[Contributing Guide](./CONTRIBUTING.md)**: Development guidelines
+
+## 🛠️ Development Scripts
+
+```bash
+# Development
+npm run dev              # Start development server
+npm run build            # Build for production
+npm run start            # Start production server
+
+# Code Quality
+npm run lint             # Run ESLint
+npm run type-check       # Check TypeScript types
+npm run format           # Format code with Prettier
+npm run format:check     # Check code formatting
+
+# Database
+npm run db:generate      # Generate migration files
+npm run db:push          # Push schema to database
+npm run db:migrate       # Run migrations
+npm run db:studio        # Open Drizzle Studio
+
+# Utilities
+npm run clean            # Clear Next.js cache
+```
 
 ## 🤝 Contributing
 
 This is a starter kit template. Feel free to fork and customize for your needs!
+
+If you're contributing improvements, see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
@@ -289,9 +325,19 @@ MIT License - feel free to use this for your projects.
 ## 🆘 Support
 
 For issues and questions:
-- Check the documentation
-- Open an issue on GitHub
-- Review the code comments
+
+1. **Check Documentation**: Review the [docs](./docs/) directory
+2. **Troubleshooting**: See [TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)
+3. **Examples**: Check [EXAMPLES.md](./docs/EXAMPLES.md) for code samples
+4. **GitHub Issues**: Open an issue for bugs or feature requests
+
+## 🎓 Learning Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Stripe Documentation](https://stripe.com/docs)
+- [Drizzle ORM Documentation](https://orm.drizzle.team/)
+- [Shadcn/UI Documentation](https://ui.shadcn.com/)
 
 ---
 

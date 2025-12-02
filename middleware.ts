@@ -1,3 +1,14 @@
+/**
+ * Next.js Middleware
+ * 
+ * Handles:
+ * - Session management with Supabase
+ * - Route protection for /dashboard routes
+ * - Redirecting authenticated users away from auth pages
+ * 
+ * Runs on every request before the page renders.
+ */
+
 import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 import { env } from "@/env.mjs"
