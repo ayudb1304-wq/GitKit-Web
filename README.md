@@ -1,18 +1,42 @@
-# SaaS Starter Kit
+# ⚡️ The "ShipSite" Stack
 
-A production-ready SaaS boilerplate built with Next.js 14+, Supabase, Stripe, and modern tooling. This starter kit provides everything you need to launch a monetizable SaaS product quickly.
+Built for developers who want to ship, not configure. This is not just a template; it's an opinionated, production-grade architecture.
 
-## 🚀 Features
+### 💰 Multi-Provider Payments (Adapter Pattern)
 
-- **Next.js 14+** with App Router and TypeScript (strict mode)
-- **Authentication** via Supabase Auth (Google & Magic Link)
-- **Payments** with Stripe (Checkout & Customer Portal)
-- **Database** using Supabase PostgreSQL with Drizzle ORM
-- **Email** via Resend for transactional emails
-- **Analytics** with PostHog (optional)
-- **UI Components** built with Shadcn/UI and Tailwind CSS
-- **SEO Optimized** with metadata, sitemap, and robots.txt
-- **Type-Safe** environment variables with Zod validation
+Switch payment providers by changing **one environment variable**. No code rewrites.
+
+- **Supported Adapters:** Stripe, Lemon Squeezy, Razorpay, Dodo Payments.
+- **Unified API:** `createCheckoutSession` and `handleWebhook` work identically across all providers.
+- **Source:** [`lib/payments/index.ts`](./lib/payments/index.ts)
+
+### 🚅 High-Performance Data Layer
+
+- **Drizzle ORM:** Zero-dependency, lightweight, and type-safe. No heavy Prisma runtime.
+- **Supabase (PostgreSQL):** Includes automatic profile creation triggers.
+- **Migrations:** Automated via Drizzle Kit.
+- **Source:** [`db/schema.ts`](./db/schema.ts)
+
+### 🔒 Type-Safe Authentication & Logic
+
+- **Server Actions:** Mutations validated with **Zod** directly on the server. No API route bloat.
+- **Supabase Auth:** Magic Link & Google OAuth pre-configured.
+- **Middleware Protection:** Edge-ready route guarding.
+- **Environment Validation:** `env.mjs` ensures your app never crashes due to missing keys.
+- **Source:** [`actions/auth.ts`](./actions/auth.ts) & [`env.mjs`](./env.mjs)
+
+### 📧 Transactional Email System
+
+- **Resend Integration:** Pre-built HTML templates for Welcome and Subscription confirmations.
+- **React-Email:** Write emails in React, send as HTML.
+- **Source:** [`lib/emails/templates.ts`](./lib/emails/templates.ts)
+
+### 🚀 Production Essentials
+
+- **SEO Ready:** Dynamic `sitemap.ts`, `robots.ts`, and OpenGraph generation (`opengraph-image.tsx`).
+- **Analytics:** PostHog provider included.
+- **Components:** Shadcn/UI + Tailwind CSS for rapid UI development.
+- **Billing Portal:** Self-service subscription management included.
 
 ## 📋 Prerequisites
 
@@ -36,6 +60,13 @@ cd saas-starter-kit
 # Install dependencies
 npm install
 ```
+
+> **Troubleshooting Installation:**
+> If you encounter issues while installing packages, try the following:
+> 1. Ensure you are using Node.js version 18 or higher (`node -v`).
+> 2. Clear your npm cache: `npm cache clean --force`
+> 3. Delete `node_modules` and `package-lock.json` and try again.
+> 4. If peer dependency issues persist, try running: `npm install --legacy-peer-deps`
 
 ### 2. Environment Variables
 
@@ -351,4 +382,4 @@ For issues and questions:
 
 ---
 
-Built with ❤️ using Next.js, Supabase, and Stripe
+Built with ❤️ 
